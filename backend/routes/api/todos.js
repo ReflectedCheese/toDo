@@ -1,11 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const { getTodos } = require("../services/todos.service");
+const {
+  getTodos,
+  getTodo,
+  createTodo,
+  editTodo,
+  deleteTodo,
+} = require("../../services/todos.service");
 
 router.get("/", (req, res) => {
   const todos = getTodos();
-  //res.send(todos);
-  res.render("todos", { title: "Todos", todos });
+  res.send(todos);
 });
 
 router.get("/:id", (req, res) => {
