@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/todos.css" />
+    <script src="/javascripts/todos.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <% todos.forEach(todo => { %>
+    <div class="todo<%= todo.completed ? " todo--completed" : "" %> "><%= todo.title %></div>
+    <% }) %>
+  </body>
+</html>
