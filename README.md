@@ -17,5 +17,5 @@ Tech
 - [ ] View Render Engine (SSR)
 
 [ ] Frontend (Vue)
-
+- [ ] Quasar 
 - [ ] API consuming
