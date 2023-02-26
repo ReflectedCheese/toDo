@@ -7,10 +7,11 @@ const todos = [
 const getTodos = () => todos;
 const getTodo = (id) => todos.find((todo) => todo.id == id);
 
-const createTodo = (title) => {
+const createTodo = (title, description) => {
   const todo = {
     id: todos.length + 1,
     title,
+    description,
     completed: false,
   };
 
@@ -22,9 +23,10 @@ const createTodo = (title) => {
 const editTodo = (id, todo) => {
   const matchingTodo = todos.find((todo) => todo.id == id);
 
-  const { title, completed } = todo;
+  const { title, description, completed } = todo;
   if (title) matchingTodo.title = title;
   if (completed !== undefined) matchingTodo.completed = completed;
+  if (description) matchingTodo.description = description;
 
   todos.splice(todos.indexOf(matchingTodo), 1, matchingTodo);
   return matchingTodo;
